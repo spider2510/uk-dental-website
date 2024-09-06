@@ -1,0 +1,170 @@
+{
+  "Header": {
+    "title": "Get the Perfect Smile with Invisalign – Clear, Comfortable, and Convenient!",
+    "paragraph": "Straighten Your Teeth Discreetly and Effectively with Our Expert Invisalign Treatment"
+  },
+  "About": {
+    "paragraph": "At Rothley Lodge Dental Practice, we pride ourselves on delivering high-quality dental care with a personal touch. Located in the heart of Staines, we are committed to helping you achieve the smile of your dreams. Our experienced team is here to guide you through every step of your Invisalign journey, ensuring you receive the best possible results in a comfortable and caring environment.",
+    "Why": [
+      "Experienced Team: Our dentists are skilled in providing Invisalign treatment, ensuring you receive the highest standard of care.",
+      "Patient-Centric Care: We focus on your comfort and satisfaction, tailoring each treatment to your specific needs.",
+      "Convenient Location: Easily accessible in Rothley, with flexible appointment times to fit your schedule.",
+      "Book Your Consultation: Ready to start your journey towards a perfect smile? Contact us today to book your Invisalign consultation and take the first step towards a more confident you."
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-stethoscope",
+      "name": "Consultation",
+      "text": "Book a consultation to discuss your dental goals. Our experts will assess your needs and create a personalised treatment plan."
+    },
+    {
+      "icon": "fa fa-align-left",
+      "name": "Custom Aligners",
+      "text": "Using state-of-the-art 3D technology, we’ll design clear aligners tailored to fit your teeth perfectly."
+    },
+    {
+      "icon": "fa fa-calendar-o",
+      "name": "Wear Your Aligners",
+      "text": "Wear your aligners for 20-22 hours a day, removing them only to eat, drink, brush, and floss."
+    },
+    {
+      "icon": "fa fa-smile-o",
+      "name": "Monitor Progress",
+      "text": "We’ll regularly check your progress to ensure your teeth are shifting as planned. Reveal Your New Smile: In as little as six months, enjoy a straighter, more confident smile!"
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe",
+      "video":"../assets/1.mp4"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe",
+      "video": "../assets/2.mp4"
+    },
+    {
+      "img": "img/testimonials/3.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/4.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/5.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/6.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "4321 Invasign St, , CA 12345 ",
+    "phone": "+1 123 456 789",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "title": "Invisible Aligners",
+      "icon": "fa fa-eye-slash",
+      "text": "Enjoy discreet teeth straightening with clear, removable aligners."
+    },
+    {
+      "title": "Custom Treatment Plan",
+      "icon": "fa fa-bed fa-exchange-alt",
+      "text": "Tailored to your unique smile by our experienced dental team."
+    },
+    {
+      "title": "Comfortable Fit",
+      "icon": "fa fa-smile-o",
+      "text": "Precision-engineered for comfort, allowing you to live your life while achieving the smile you’ve always wanted."
+    },
+    {
+      "title": "Quick Results",
+      "icon": "fa fa-table",
+      "text": "Noticeable improvements in just a few months with our advanced technology."
+    }
+  ]
+}
