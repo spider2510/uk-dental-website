@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Logo from '../assets/logo.png';
 import { AppBar, Toolbar, IconButton, Box, Button, Drawer, List, ListItem, ListItemText, useTheme, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-// import FacebookIcon from '@mui/icons-material/Facebook';
-// import TwitterIcon from '@mui/icons-material/Twitter';
-// import InstagramIcon from '@mui/icons-material/Instagram';
 import CallIcon from '@mui/icons-material/Call';
 
 const NavBar = () => {
@@ -18,7 +15,7 @@ const NavBar = () => {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ backgroundColor: '#13192d', height: 'auto', top: 0, paddingTop: '1%', paddingBottom: '1%' }}>
+      <AppBar position="relative" sx={{ backgroundColor: '#13192d', height: 'auto', top: 0, paddingTop: '1%', paddingBottom: '1%' }}>
         <Toolbar
           sx={{
             height: '100%',
@@ -54,48 +51,30 @@ const NavBar = () => {
             </IconButton>
           )}
 
-          {/* Navigation links */}
           {!isMobile && (
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {/* //   <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            //     <a href="https://facebook.com" style={{ color: 'white', textDecoration: 'none' }}>
-            //       <IconButton color="inherit">
-            //         <FacebookIcon />
-            //       </IconButton>
-            //     </a>
-            //     <a href="https://twitter.com" style={{ color: 'white', textDecoration: 'none' }}>
-            //       <IconButton color="inherit">
-            //         <TwitterIcon />
-            //       </IconButton>
-            //     </a>
-            //     <a href="https://instagram.com" style={{ color: 'white', textDecoration: 'none' }}>
-            //       <IconButton color="inherit">
-            //         <InstagramIcon />
-            //       </IconButton>
-            //     </a>
-            //   </Box> */}
               <Box sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>
-                <a href="#gallery" style={{ color: 'white', textDecoration: 'none' }}>
+                {/* <a href="#gallery" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">Gallery</Button>
                 </a>
                 <a href="#features" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">Features</Button>
-                </a>
+                </a> */}
                 <a href="#about" style={{ color: 'white', textDecoration: 'none' }}>
-                  <Button color="inherit" size="large">About</Button>
+                  <Button color="inherit" size="large">About Us</Button>
                 </a>
-                <a href="#services" style={{ color: 'white', textDecoration: 'none' }}>
+                {/* <a href="#services" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">Invisalign</Button>
-                </a>
+                </a> */}
                 <a href="#team" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">Our Team</Button>
                 </a>
                 <a href="#qna" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">FAQ</Button>
                 </a>
-                <a href="#testimonials" style={{ color: 'white', textDecoration: 'none' }}>
+                {/* <a href="#testimonials" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">Testimonials</Button>
-                </a>
+                </a> */}
                 <a href="#contact" style={{ color: 'white', textDecoration: 'none' }}>
                   <Button color="inherit" size="large">Contact</Button>
                 </a>
@@ -124,27 +103,27 @@ const NavBar = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <ListItem button>
+            {/* <ListItem button>
               <ListItemText primary={<a href="#gallery" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Gallery</a>} />
             </ListItem>
             <ListItem button>
               <ListItemText primary={<a href="#features" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Features</a>} />
-            </ListItem>
+            </ListItem> */}
             <ListItem button>
-              <ListItemText primary={<a href="#about" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>About</a>} />
+              <ListItemText primary={<a href="#about" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>About Us</a>} />
             </ListItem>
-            <ListItem button>
+            {/* <ListItem button>
               <ListItemText primary={<a href="#services" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Invisalign</a>} />
-            </ListItem>
+            </ListItem> */}
             <ListItem button>
               <ListItemText primary={<a href="#team" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Our Team</a>} />
             </ListItem>
             <ListItem button>
               <ListItemText primary={<a href="#qna" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>FAQ</a>} />
             </ListItem>
-            <ListItem button>
+            {/* <ListItem button>
               <ListItemText primary={<a href="#testimonials" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Testimonials</a>} />
-            </ListItem>
+            </ListItem> */}
             <ListItem button>
               <ListItemText primary={<a href="#contact" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Contact</a>} />
             </ListItem>
