@@ -22,7 +22,6 @@ function App() {
       <Header data={JsonData.Header}/>
       <HowitWork data={JsonData.Services} />
       <About data={JsonData.About} />
-
       <Features data={JsonData.Features} />
       <Gallery data={JsonData.Gallery} />
 
