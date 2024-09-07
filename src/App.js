@@ -20,10 +20,11 @@ function App() {
     <div className="App">
       <NavBar/>
       <Header data={JsonData.Header}/>
-      <Gallery data={JsonData.Gallery} />
-      <Features data={JsonData.Features} />
-      <About data={JsonData.About} />
       <HowitWork data={JsonData.Services} />
+      <Features data={JsonData.Features} />
+      <Gallery data={JsonData.Gallery} />
+
+      <About data={JsonData.About} />
       <TeamSection />
       <QnA data={JsonData.Team} />
       <Testimonials data={JsonData.Testimonials} />

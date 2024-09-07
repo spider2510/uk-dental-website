@@ -1,18 +1,13 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Paper, Divider } from '@mui/material';
+import { Box, Container, Grid, Typography, Card, CardContent, CardMedia } from '@mui/material';
 import { motion } from 'framer-motion';
-import { MedicationLiquid, Visibility, Build, CheckCircle } from '@mui/icons-material';
-import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
-import EditCalendarIcon from '@mui/icons-material/EditCalendar';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import { MedicationLiquid, EditCalendar, AutoFixHigh, EmojiEmotions } from '@mui/icons-material';
+
 export const HowitWork = (props) => {
-  // Define animation variants
   const fadeInVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
-
-
 
   return (
     <Box id="services" sx={{ textAlign: 'center', py: { xs: 2, md: 8 } }}>
@@ -25,60 +20,70 @@ export const HowitWork = (props) => {
               position: 'relative',
               display: 'inline-block',
               mb: 2,
-              borderBottom: '4px solid #13192d' // Adjust thickness and color as needed
             }}
             gutterBottom
           >
             How Invisalign Works
           </Typography>
-          <Typography variant="h6" component="h3">
-            Step-by-Step Process:
-          </Typography>
         </Box>
         <Grid container spacing={4}>
           {props.data
             ? props.data.map((d, i) => (
-              <Grid item xs={12} md={6} key={`${d.name}-${i}`}>
+              <Grid item xs={12} sm={6} md={4} lg={3} key={`${d.name}-${i}`}>
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInVariants}
                 >
-                  <Box
+                  <Card
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
-                      alignItems: 'center',
-                      textAlign: 'center'
+                      maxWidth: 345,
+                      mx: 'auto',
+                      textAlign: 'center',
+                      boxShadow: 3, // Add shadow to the card
+                      borderRadius: 0, // Remove card radius
+                      height: '100%', // Ensure all cards have the same height
+                      padding: 1
                     }}
                   >
-                    <Paper
-                      elevation={4}
+                    <CardMedia
+                      component="div"
                       sx={{
-                        width: 80,
-                        height: 80,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        borderRadius: '50%',
-                        mb: 2,
-                        bgcolor: '#13192d',
+                        height: 200, // Increased height of the image
+                        // backgroundColor: '#13192d',
                       }}
                     >
-                      {/* Map MUI icons */}
-                      {d.name == 'Consultation' && <MedicationLiquid fontSize="large" sx={{ fontSize: 40, color: '#FFF' }} />}
-                      {d.name == 'Custom Aligners' && <AutoFixHighIcon sx={{ fontSize: 40, color: '#FFF' }} fontSize="large" />}
-                      {d.name == 'Wear Your Aligners' && <EditCalendarIcon sx={{ fontSize: 40, color: '#FFF' }} fontSize="large" />}
-                      {d.name == 'Monitor Progress' && <EmojiEmotionsIcon fontSize="large" sx={{ fontSize: 40, color: '#FFF' }} />}
-                    </Paper>
-                    <Typography variant="h6" gutterBottom>
-                      {d.name}
-                    </Typography>
-                    <Typography variant="body1">
-                      {d.text}
-                    </Typography>
-                  </Box>
+                      {/* Map MUI vector icons */}
+                      {d.name === 'Consultation' && <MedicationLiquid fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />}
+                      {d.name === 'Custom Aligners' && <AutoFixHigh sx={{ fontSize: 60, color: '#13192d' }} fontSize="large" />}
+                      {d.name === 'Wear Your Aligners' && <EditCalendar sx={{ fontSize: 60, color: '#13192d' }} fontSize="large" />}
+                      {d.name === 'Monitor Progress' && <EmojiEmotions sx={{ fontSize: 60, color: '#13192d' }} fontSize="large" />}
+                    </CardMedia>
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Typography
+                        variant="h5"
+                        gutterBottom
+                        sx={{ 
+                          mb: 2, // Increased space between title and content
+                          fontWeight: 'bold' // Add boldness to the title
+                        }}
+                      >
+                        {d.name}
+                      </Typography>
+                      <Typography variant="body1" sx={{ color: 'grey' }}>
+                        {d.text}
+                      </Typography>
+                      <Typography variant="body1" sx={{ color: 'grey', marginTop: 3, fontWeight: 'bold' }}>
+                        {'Learn More'}
+                      </Typography>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               </Grid>
             ))

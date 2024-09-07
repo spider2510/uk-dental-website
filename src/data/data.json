@@ -63,22 +63,26 @@
     {
       "icon": "fa fa-stethoscope",
       "name": "Consultation",
-      "text": "Book a consultation to discuss your dental goals. Our experts will assess your needs and create a personalised treatment plan."
+      "text": "Book a consultation to discuss your dental goals.",
+      "info": "Book a consultation to discuss your dental goals. Our experts will assess your needs and create a personalised treatment plan."
     },
     {
       "icon": "fa fa-align-left",
       "name": "Custom Aligners",
-      "text": "Using state-of-the-art 3D technology, we’ll design clear aligners tailored to fit your teeth perfectly."
+      "text": "Using state-of-the-art 3D technology.",
+      "info": "Using state-of-the-art 3D technology, we’ll design clear aligners tailored to fit your teeth perfectly."
     },
     {
       "icon": "fa fa-calendar-o",
       "name": "Wear Your Aligners",
-      "text": "Wear your aligners for 20-22 hours a day, removing them only to eat, drink, brush, and floss."
+      "text": "Wear your aligners for 20-22 hours a day.",
+      "info": "Wear your aligners for 20-22 hours a day, removing them only to eat, drink, brush, and floss."
     },
     {
       "icon": "fa fa-smile-o",
       "name": "Monitor Progress",
-      "text": "We’ll regularly check your progress to ensure your teeth are shifting as planned. Reveal Your New Smile: In as little as six months, enjoy a straighter, more confident smile!"
+      "text": "We’ll regularly check your progress.",
+      "info": "We’ll regularly check your progress to ensure your teeth are shifting as planned. Reveal Your New Smile: In as little as six months, enjoy a straighter, more confident smile!"
     }
   ],
   "Testimonials": [
