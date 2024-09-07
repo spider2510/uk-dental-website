@@ -51,6 +51,7 @@ export const Features = (props) => {
         <Box mb={4}>
           <Typography
             variant="h4"
+            color="#13192d"
             sx={{
               fontWeight: 'bold',
               position: 'relative',
@@ -68,12 +69,12 @@ export const Features = (props) => {
         <Grid container spacing={4}>
           {props.data
             ? props.data.map((d, i) => (
-                <Grid item xs={12} sm={6} md={3} key={`${d.title}-${i}`}>
+              <Grid item xs={12} sm={6} md={3} key={`${d.title}-${i}`}>
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  // variants={fadeInVariants}
+                // variants={fadeInVariants}
                 >
                   <Card
                     sx={{
@@ -106,6 +107,7 @@ export const Features = (props) => {
                       <Typography
                         variant="h5"
                         gutterBottom
+                        color="#13192d"
                         sx={{
                           mb: 2, // Increased space between title and content
                           fontWeight: 'bold' // Add boldness to the title

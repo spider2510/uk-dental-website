@@ -15,7 +15,8 @@ export const HowitWork = (props) => {
         <Box sx={{ mb: 4 }}>
           <Typography
             variant="h4"
-            sx={{
+              color="#13192d"
+              sx={{
               fontWeight: 'bold',
               position: 'relative',
               display: 'inline-block',
@@ -69,7 +70,8 @@ export const HowitWork = (props) => {
                       <Typography
                         variant="h5"
                         gutterBottom
-                        sx={{ 
+                        color="#13192d"
+                        sx={{
                           mb: 2, // Increased space between title and content
                           fontWeight: 'bold' // Add boldness to the title
                         }}

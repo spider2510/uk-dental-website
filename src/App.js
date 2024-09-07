@@ -23,11 +23,11 @@ function App() {
       <HowitWork data={JsonData.Services} />
       <About data={JsonData.About} />
       <Features data={JsonData.Features} />
+      <Testimonials data={JsonData.Testimonials} />
       <Gallery data={JsonData.Gallery} />
 
       <TeamSection />
       <QnA data={JsonData.Team} />
-      <Testimonials data={JsonData.Testimonials} />
       <Contact data={JsonData.Contact} />
     </div>
   );
