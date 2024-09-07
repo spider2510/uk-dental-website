@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Box, Typography, IconButton, useTheme, useMediaQuery } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import backgroundVideo from '../assets/2.mp4';
+import backgroundImage from '../assets/SimonChard2023_Gili_6633.jpg';
 
 export const Header = (props) => {
   const [showForm, setShowForm] = useState(true);
@@ -15,14 +15,11 @@ export const Header = (props) => {
 
   return (
     <header id="header">
-      <Box className="video-container" sx={{ position: 'relative', overflow: 'hidden', height: '80vh' }}>
-        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-          <source src={backgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <Box className="image-container" sx={{ position: 'relative', overflow: 'hidden', height: '80vh' }}>
+        <img src={backgroundImage} alt="Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <Box className="overlay" sx={{
           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', display: 'flex',
+          backgroundColor: 'rgba(0, 0, 0, 0.3)', display: 'flex',
           flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
           color: 'white', textAlign: 'center', p: { xs: 2, sm: 3, md: 4 }, // Responsive padding
         }}>
@@ -32,16 +29,17 @@ export const Header = (props) => {
             transition={{ duration: 0.5 }}
           >
             <Typography
-              variant="h3"
+              variant="h4" // Changed from h3 to h4
               component="h3"
-              sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }} // Responsive font size
+              sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }} // Reduced font size
+              marginTop={'15%'}
             >
               {props.data ? props.data.title : "Loading"}
             </Typography>
             <Typography
               variant="h6"
               component="p"
-              sx={{ mt: 2, fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } }} // Responsive font size
+              sx={{ mt: 2, fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.25rem' } }} // Reduced font size
             >
               {props.data ? props.data.paragraph : "Loading"}
             </Typography>
@@ -51,7 +49,7 @@ export const Header = (props) => {
               sx={{
                 mt: 3,
                 backgroundColor: '#13192d',
-                fontSize: { xs: '0.8rem', sm: '1rem', md: '1.2rem' }, // Responsive font size
+                fontSize: { xs: '0.7rem', sm: '0.9rem', md: '1.1rem' }, // Reduced font size
                 padding: { xs: '8px 16px', sm: '10px 20px', md: '12px 24px' } // Responsive padding
               }}
             >
@@ -64,6 +62,7 @@ export const Header = (props) => {
     </header>
   );
 };
+
 const ConsultationForm = ({ open, onClose }) => {
   const styleInputProps = {
     sx: {
@@ -164,7 +163,6 @@ const ConsultationForm = ({ open, onClose }) => {
               }}
             />
             <TextField
-              // label="Preferred Consultation Date/Time" 
               type="datetime-local"
               variant="outlined"
               fullWidth
@@ -208,6 +206,7 @@ const ConsultationForm = ({ open, onClose }) => {
           sx={{
             color: '#13192d',
             borderColor: '#13192d',
+            fontSize: { xs: '0.7rem', sm: '0.9rem', md: '1rem' }, // Reduced font size
             '&:hover': {
               borderColor: '#192655', // Update hover background color
             }
@@ -220,6 +219,7 @@ const ConsultationForm = ({ open, onClose }) => {
           type="submit"
           sx={{
             backgroundColor: '#13192d',
+            fontSize: { xs: '0.7rem', sm: '0.9rem', md: '1rem' }, // Reduced font size
             '&:hover': {
               backgroundColor: '#192655', // Update hover background color
             }
