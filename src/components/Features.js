@@ -33,21 +33,21 @@ export const Features = (props) => {
   const getIcon = (title) => {
     switch (title) {
       case "Invisible Aligners":
-        return <VisibilityOffIcon fontSize="large" />;
-      case "Custom Treatment Plan":
-        return <BedIcon fontSize="large" />;
+        return <VisibilityOffIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
+      case "Personalized Care":
+        return <BedIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
       case "Comfortable Fit":
-        return <AutoAwesomeIcon fontSize="large" />;
+        return <AutoAwesomeIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
       case "Quick Results":
-        return <SpeedIcon fontSize="large" />;
+        return <SpeedIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
       default:
         return null;
     }
   };
 
   return (
-    <Box id="features" textAlign="center">
-      <Container maxWidth="md">
+    <Box id="features" sx={{ textAlign: 'center', py: { xs: 2, md: 8 } }}>
+      <Container >
         <Box mb={4}>
           <Typography
             variant="h4"
@@ -69,53 +69,61 @@ export const Features = (props) => {
           {props.data
             ? props.data.map((d, i) => (
                 <Grid item xs={12} sm={6} md={3} key={`${d.title}-${i}`}>
-                  <motion.div
-                    initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
-                    animate={controls}
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  // variants={fadeInVariants}
+                >
+                  <Card
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      maxWidth: 345,
+                      mx: 'auto',
+                      textAlign: 'center',
+                      boxShadow: 3, // Add shadow to the card
+                      borderRadius: 0, // Remove card radius
+                      height: '100%', // Ensure all cards have the same height
+                      padding: 1
+                    }}
                   >
-                    <Card
+                    <CardMedia
+                      component="div"
                       sx={{
                         display: 'flex',
-                        flexDirection: 'column',
-                        maxWidth: 500, // Increase card width
-                        minHeight: 350, // Increase card height
-                        mx: 'auto',
-                        textAlign: 'center',
-                        boxShadow: 4,
-                        borderRadius: 0,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: 200, // Increased height of the image
+                        // backgroundColor: '#13192d',
                       }}
                     >
-                      <CardMedia
-                        component="div"
+                      <Box color="white" sx={{ fontSize: '2.5rem' }}> {/* Increase icon size */}
+                        {getIcon(d.title)}
+                      </Box>
+                    </CardMedia>
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Typography
+                        variant="h5"
+                        gutterBottom
                         sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: 200, // Increase image (icon) height
-                          // width: 200, // Set width to 100%
-                          backgroundColor: '#13192d',
+                          mb: 2, // Increased space between title and content
+                          fontWeight: 'bold' // Add boldness to the title
                         }}
                       >
-                        <Box color="white" sx={{ fontSize: '2.5rem' }}> {/* Increase icon size */}
-                          {getIcon(d.title)}
-                        </Box>
-                      </CardMedia>
-                      <CardContent sx={{ flexGrow: 1 }}>
-                        <Typography
-                          variant="h6"
-                          gutterBottom
-                          sx={{ mb: 2, fontWeight: 'bold' }}
-                        >
-                          {d.title}
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'grey' }}>
-                          {d.text}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </Grid>
-              ))
+                        {d.title}
+                      </Typography>
+                      <Typography variant="body1" sx={{ color: 'grey' }}>
+                        {d.text}
+                      </Typography>
+                      {/* <Typography variant="body1" sx={{ color: 'grey', marginTop: 3, fontWeight: 'bold' }}>
+                        {'Learn More'}
+                      </Typography> */}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))
             : "Loading..."}
         </Grid>
       </Container>
