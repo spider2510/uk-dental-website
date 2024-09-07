@@ -21,10 +21,11 @@ function App() {
       <NavBar/>
       <Header data={JsonData.Header}/>
       <HowitWork data={JsonData.Services} />
+      <About data={JsonData.About} />
+
       <Features data={JsonData.Features} />
       <Gallery data={JsonData.Gallery} />
 
-      <About data={JsonData.About} />
       <TeamSection />
       <QnA data={JsonData.Team} />
       <Testimonials data={JsonData.Testimonials} />

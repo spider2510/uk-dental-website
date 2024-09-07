@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { Box, Container, Grid, Typography, Paper } from "@mui/material";
+import { Box, Container, Grid, Typography, Card, CardContent, CardMedia } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import BedIcon from '@mui/icons-material/Bed';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import TableChartIcon from '@mui/icons-material/TableChart';
 import SpeedIcon from '@mui/icons-material/Speed';
 
 export const Features = (props) => {
@@ -47,19 +46,22 @@ export const Features = (props) => {
   };
 
   return (
-    <Box id="features" textAlign="center" py={4} sx={{paddingLeft:'5%',paddingRight:'5%'}}>
+    <Box id="features" textAlign="center">
       <Container maxWidth="md">
         <Box mb={4}>
-          <Typography  variant="h4" sx={{
+          <Typography
+            variant="h4"
+            sx={{
               fontWeight: 'bold',
               position: 'relative',
               display: 'inline-block',
               mb: 2,
-              borderBottom: '4px solid #13192d' // Adjust thickness and color as needed
-            }} gutterBottom>
+            }}
+            gutterBottom
+          >
             Why We Love Invisalign
           </Typography>
-          <Typography variant="h6" component="h3">
+          <Typography variant="h6" component="h3" color={'grey'}>
             Discover the benefits of Invisalign – the clear alternative to braces that fits seamlessly into your lifestyle.
           </Typography>
         </Box>
@@ -71,29 +73,46 @@ export const Features = (props) => {
                     initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
                     animate={controls}
                   >
-                    <Box display="flex" flexDirection="column" alignItems="center">
-                      <Paper
-                        elevation={4}
+                    <Card
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        maxWidth: 500, // Increase card width
+                        minHeight: 350, // Increase card height
+                        mx: 'auto',
+                        textAlign: 'center',
+                        boxShadow: 4,
+                        borderRadius: 0,
+                      }}
+                    >
+                      <CardMedia
+                        component="div"
                         sx={{
-                          width: 80,
-                          height: 80,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          borderRadius: '50%',
-                          mb: 2,
-                          bgcolor: '#13192d',
+                          height: 200, // Increase image (icon) height
+                          // width: 200, // Set width to 100%
+                          backgroundColor: '#13192d',
                         }}
                       >
-                        <Box color="white">{getIcon(d.title)}</Box>
-                      </Paper>
-                      <Typography variant="h6" component="h3" mt={2}>
-                        {d.title}
-                      </Typography>
-                      <Typography variant="body1" mt={1}>
-                        {d.text}
-                      </Typography>
-                    </Box>
+                        <Box color="white" sx={{ fontSize: '2.5rem' }}> {/* Increase icon size */}
+                          {getIcon(d.title)}
+                        </Box>
+                      </CardMedia>
+                      <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography
+                          variant="h6"
+                          gutterBottom
+                          sx={{ mb: 2, fontWeight: 'bold' }}
+                        >
+                          {d.title}
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'grey' }}>
+                          {d.text}
+                        </Typography>
+                      </CardContent>
+                    </Card>
                   </motion.div>
                 </Grid>
               ))
