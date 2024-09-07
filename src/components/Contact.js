@@ -16,94 +16,71 @@ const initialState = {
 const Footer = (props) => {
 
   return (
-    <Grid my={3} container spacing={3} paddingX={4}>
-      <Grid item xs={12} md={3}>
-        <Box sx={{ color: '#fff', display: 'flex', alignItems: "start", flexDirection: 'column' }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>
-            Contact Information
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1, alignItems: "start" }}>
-            <strong>Address:</strong> {props.data ? props.data.address : "4321 Invasign St, CA 12345 "}
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1, alignItems: "start" }}>
-            <strong>Phone:</strong> {props.data ? props.data.phone : "+1 123 456 789"}
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 3 }}>
-            <strong>Email:</strong> {props.data ? props.data.email : "info@company.com"}
-          </Typography>
-          {/* <Divider sx={{ mb: 3, bgcolor: '#fff' }} />
+    <Container>
+      <Grid my={3} container spacing={3} paddingX={4}>
+        <Grid item xs={12} md={4}>
+          <Box sx={{ color: '#fff', display: 'flex', alignItems: "start", flexDirection: 'column' }}>
+            <Typography variant="h5" component="h2" sx={{ mb: 3 }}>
+              Contact Information
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 1, alignItems: "start" }}>
+              <strong>Address:</strong> {props.data ? props.data.address : "4321 Invasign St, CA 12345 "}
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 1, alignItems: "start" }}>
+              <strong>Phone:</strong> {props.data ? props.data.phone : "+1 123 456 789"}
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3 }}>
+              <strong>Email:</strong> {props.data ? props.data.email : "info@company.com"}
+            </Typography>
+            {/* <Divider sx={{ mb: 3, bgcolor: '#fff' }} />
           <Typography variant="h6" sx={{ mb: 2 }}>
             Follow Us
           </Typography> */}
-          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-            <a href={props.data ? props.data.twitter : "/"}><Instagram sx={{ fontSize: 30, color: '#fff', '&:hover': { color: '#1DA1F2' } }} /></a>
-            <a href={props.data ? props.data.facebook : "/"}><Facebook sx={{ fontSize: 30, color: '#fff', '&:hover': { color: '#608dfd' } }} /></a>
-            <a href={props.data ? props.data.youtube : "/"}><MusicNote sx={{ fontSize: 30, color: '#fff', '&:hover': { color: '#1DA1F2' } }} /></a>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+              <a href={props.data ? props.data.twitter : "/"}><Instagram sx={{ fontSize: 30, color: '#fff', '&:hover': { color: '#1DA1F2' } }} /></a>
+              <a href={props.data ? props.data.facebook : "/"}><Facebook sx={{ fontSize: 30, color: '#fff', '&:hover': { color: '#608dfd' } }} /></a>
+              <a href={props.data ? props.data.youtube : "/"}><MusicNote sx={{ fontSize: 30, color: '#fff', '&:hover': { color: '#1DA1F2' } }} /></a>
+            </Box>
           </Box>
-        </Box>
-      </Grid>
-      <Grid item xs={12} md={3}>
-        <Box sx={{ color: '#fff', display: 'flex', alignItems: "start", flexDirection: 'column' }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>
-            Quick links
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            <a href="#header" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>HOME</a>
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            <a href="#gallery" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>GALLERY</a>
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            <a href="#features" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>FEATURES</a>
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            <a href="#qna" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>FAQ</a>
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            <a href="#team" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>OUR TEAM</a>
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
-            <a href="#contact" style={{ color: 'white', textDecoration: 'none', margin: '0 10px' }}>CONTACT US</a>
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={12} md={3}>
+        </Grid>
+        <Grid item xs={12} md={4}>
 
-        <Box sx={{ display: 'flex', alignItems: 'start', paddingX: '16px', flexDirection: 'column' }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>
-            Opening Hours
-          </Typography>
-          <Typography sx={{ display: 'flex', alignItems: 'satrt', mb: 1 }} >
-            <AccessTimeIcon sx={{ mr: 1 }} /> Monday - Friday: 9am - 8pm
-          </Typography>
-          <Typography sx={{ display: 'flex', alignItems: 'satrt', mb: 1 }}>
-            <CalendarTodayIcon sx={{ mr: 1 }} /> Saturday: 10am - 6pm
-          </Typography>
-          <Typography sx={{ display: 'flex', alignItems: 'satrt', mb: 1 }} >
-            <WeekendIcon sx={{ mr: 1 }} /> Sunday: Closed
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={12} md={2}>
-        <Typography variant="h6" sx={{ mb: 1 }} >
-          Subscribe to our Newsletter
-        </Typography>
-        <form noValidate autoComplete="off">
-          <Box paddingY={'19px'}>
-            <TextField
-              placeholder="Email"
-              type="email"
-              fullWidth
-              margin="normal"
-              sx={{ backgroundColor: 'white', fontFamily: '"FontAwesome', fontSize: '10px', border: "red" }}
-            />
+          <Box sx={{ display: 'flex', alignItems: 'start', paddingX: '16px', flexDirection: 'column' }}>
+            <Typography variant="h5" component="h2" sx={{ mb: 3 }}>
+              Opening Hours
+            </Typography>
+            <Typography sx={{ display: 'flex', alignItems: 'satrt', mb: 1 }} >
+              <AccessTimeIcon sx={{ mr: 1 }} /> Monday - Friday: 9am - 8pm
+            </Typography>
+            <Typography sx={{ display: 'flex', alignItems: 'satrt', mb: 1 }}>
+              <CalendarTodayIcon sx={{ mr: 1 }} /> Saturday: 10am - 6pm
+            </Typography>
+            <Typography sx={{ display: 'flex', alignItems: 'satrt', mb: 1 }} >
+              <WeekendIcon sx={{ mr: 1 }} /> Sunday: Closed
+            </Typography>
           </Box>
-          <Button variant="outlined" color="inherit" type="submit">
-            Subscribe
-          </Button>
-        </form>
+        </Grid>
+        <Grid item xs={12} md={2}>
+          <Typography variant="h5" component="h2" >
+            Subscribe to our Newsletter
+          </Typography>
+          <form noValidate autoComplete="off">
+            <Box paddingY={'19px'}>
+              <TextField
+                placeholder="Email"
+                type="email"
+                fullWidth
+                margin="normal"
+                sx={{ backgroundColor: 'white', fontFamily: '"FontAwesome', fontSize: '10px', border: "red" }}
+              />
+            </Box>
+            <Button variant="outlined" color="inherit" type="submit">
+              Subscribe
+            </Button>
+          </form>
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   )
 }
 
