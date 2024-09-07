@@ -12,6 +12,7 @@ import { Testimonials } from './components/Testimonials';
 import { QnA } from './components/QnA';
 import { Contact } from './components/Contact';
 import { TeamSection } from './components/TeamSection';
+import { Footer } from './components/Footer';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
       <TeamSection />
       <QnA data={JsonData.Team} />
       <Contact data={JsonData.Contact} />
+      <Footer />
     </div>
   );
 }
