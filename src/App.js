@@ -4,7 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import { Header } from './components/Header';
 import JsonData from "./data/data.json";
-import {Gallery} from './components/Gallery'
+import { Gallery } from './components/Gallery'
 import { Features } from './components/Features';
 import { About } from './components/About';
 import { HowitWork } from './components/HowitWork';
@@ -15,12 +15,12 @@ import { TeamSection } from './components/TeamSection';
 import { Footer } from './components/Footer';
 
 function App() {
-  
+
 
   return (
     <div className="App">
-      <NavBar/>
-      <Header data={JsonData.Header}/>
+      <NavBar />
+      <Header data={JsonData.Header} />
       <HowitWork data={JsonData.Services} />
       <About data={JsonData.About} />
       <Features data={JsonData.Features} />
@@ -28,8 +28,8 @@ function App() {
       <Gallery data={JsonData.Gallery} />
 
       <TeamSection />
-      <QnA data={JsonData.Team} />
       <Contact data={JsonData.Contact} />
+      <QnA data={JsonData.Team} />
       <Footer />
     </div>
   );

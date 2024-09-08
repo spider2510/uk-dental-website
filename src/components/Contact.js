@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Box, Typography, TextField, Button, Grid, Paper } from "@mui/material";
-
+import backgroundImage from '../assets/contact-us-background.jpg';
 
 const initialState = {
   name: "",
@@ -9,9 +9,7 @@ const initialState = {
   message: "",
 };
 
-
 export const Contact = () => {
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
@@ -34,75 +32,122 @@ export const Contact = () => {
       );
   };
 
-
   const [{ name, email, message }, setState] = useState(initialState);
+
   return (
-    <Box paddingX={3}>
-      <Box sx={{ textAlign: 'center', mb: 6 }}>
-        <Typography variant="h4" sx={{
-          fontWeight: 'bold',
-          position: 'relative',
-          display: 'inline-block',
-          mb: 2,
-          borderBottom: '4px solid #13192d' // Adjust thickness and color as needed
+    <Box sx={{ position: 'relative', height: '100vh', width: '100%' }}>
+      {/* Background image */}
+      <Box
+        component="img"
+        src={backgroundImage}
+        alt="Background"
+        sx={{
+          width: '100%',
+          height: '100vh', // Reduce the height to 50% of viewport height
+          objectFit: 'cover',
         }}
-          gutterBottom>
-          Get In Touch
-        </Typography>
-        <Typography variant="h6" component="h3" sx={{ mb: 1 }}>
-          Please fill out the form below to send us an email, and we will get back to you as soon as possible.
-        </Typography>
-      </Box>
-      <Grid container spacing={4} marginBottom={2}>
-        <Grid item xs={12} md={12}>
-          <Paper elevation={3} sx={{ p: 4, bgcolor: '#fff', color: '#000' }}>
+      />
+
+      <Grid
+        sx={{
+          position: 'absolute',
+          top: 10,
+          marginLeft: '10%',
+          width: '100%',
+          height: '100%', // Ensure the form covers the entire container
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          maxWidth: 450
+        }}
+      >
+        <Grid item xs={12} md={4}>
+          <Paper elevation={24} sx={{ p: 4, bgcolor: '#fff', color: '#000', opacity: 0.97 }}>
             <form name="sentMessage" onSubmit={handleSubmit}>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={3}>
+                <Box sx={{ textAlign: 'center', my: 3 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 'bold',
+                      position: 'relative',
+                      display: 'inline-block',
+                      mb: 3,
+                      color: '#13192d',
+                    }}
+                    gutterBottom
+                  >
+                    How can we help? Contact us now
+                  </Typography>
+                  <Typography variant="subtitle" component="h3" color="grey">
+                    Fill out the form below to email us, and we’ll respond promptly.
+                  </Typography>
+                </Box>
+                <Grid item xs={12} sm={12}>
                   <TextField
                     fullWidth
-                    label="Name"
                     name="name"
+                    placeholder="Enter Your Name"
                     variant="outlined"
                     required
                     onChange={handleChange}
                     value={name}
-                    sx={{ mb: 2 }}
+                    InputProps={{
+                      sx: {
+                        "&::placeholder": {
+                          color: "grey",
+                          fontSize: "14px",
+                        },
+                      },
+                    }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={12}>
                   <TextField
                     fullWidth
-                    label="Email"
+                    placeholder="Enter Your Email"
                     name="email"
                     type="email"
                     variant="outlined"
                     required
                     onChange={handleChange}
                     value={email}
-                    sx={{ mb: 2 }}
+                    InputProps={{
+                      sx: {
+                        "&::placeholder": {
+                          color: "grey",
+                          fontSize: "14px",
+                        },
+                      },
+                    }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={12}>
                   <TextField
                     fullWidth
-                    label="Message"
+                    placeholder="Your Message"
                     name="message"
-                    // multiline
+                    multiline
                     rows={4}
                     variant="outlined"
                     required
                     onChange={handleChange}
                     value={message}
-                    sx={{ mb: 2 }}
+                    InputProps={{
+                      sx: {
+                        "&::placeholder": {
+                          color: "grey",
+                          fontSize: "14px",
+                          fontWeight: 'bold',
+                        },
+                      },
+                    }}
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <Button
                     type="submit"
                     variant="contained"
-                    // color="primary"
-                    // fullWidth
                     sx={{ py: 1.5, backgroundColor: "#13192d", color: 'white' }}
                   >
                     Send Message
@@ -113,7 +158,6 @@ export const Contact = () => {
           </Paper>
         </Grid>
       </Grid>
-
     </Box>
-  )
-}
+  );
+};
