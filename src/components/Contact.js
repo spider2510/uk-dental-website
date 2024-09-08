@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { Box, Typography, TextField, Button, Grid, Paper } from "@mui/material";
+import { Box, Typography, TextField, Button, Grid, Paper, useTheme, useMediaQuery } from "@mui/material";
 import backgroundImage from '../assets/contact-us-background.jpg';
 
 const initialState = {
@@ -33,32 +33,35 @@ export const Contact = () => {
   };
 
   const [{ name, email, message }, setState] = useState(initialState);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Box sx={{ position: 'relative', height: '100vh', width: '100%' }}>
-      {/* Background image */}
-      <Box
-        component="img"
-        src={backgroundImage}
-        alt="Background"
-        sx={{
-          width: '100%',
-          height: '100vh', // Reduce the height to 50% of viewport height
-          objectFit: 'cover',
-        }}
-      />
+      {!isMobile && (
+        <Box
+          component="img"
+          src={backgroundImage}
+          alt="Background"
+          sx={{
+            width: '100%',
+            height: '100vh',
+            objectFit: 'cover',
+          }}
+        />
+      )}
 
       <Grid
         sx={{
           position: 'absolute',
           top: 10,
-          marginLeft: '10%',
-          width: '100%',
-          height: '100%', // Ensure the form covers the entire container
+          marginLeft: isMobile ? '0' : '10%',
+          width: isMobile ? '100%' : 'auto',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          maxWidth: 450
+          maxWidth: 450,
         }}
       >
         <Grid item xs={12} md={4}>
@@ -100,6 +103,9 @@ export const Contact = () => {
                         },
                       },
                     }}
+                    sx={{
+                      boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)", // Shadow effect
+                    }}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
@@ -119,6 +125,9 @@ export const Contact = () => {
                           fontSize: "14px",
                         },
                       },
+                    }}
+                    sx={{
+                      boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)", // Shadow effect
                     }}
                   />
                 </Grid>
@@ -141,6 +150,9 @@ export const Contact = () => {
                           fontWeight: 'bold',
                         },
                       },
+                    }}
+                    sx={{
+                      boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.1)", // Shadow effect
                     }}
                   />
                 </Grid>
