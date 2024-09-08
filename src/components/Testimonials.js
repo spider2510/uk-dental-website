@@ -97,6 +97,7 @@ export const ProductReviewCard = ({ user, review }) => {
       overflow: 'visible', // Ensure the shadow is visible
       height: '100%', // Ensure all cards have the same height
       padding: 1,
+      marginBottom:5
     }}>
     
       <CardContent>
@@ -173,7 +174,7 @@ export const Testimonials = (props) => {
   }, []);
 
   return (
-    <Box id="testimonials" mb={4} sx={{ py: 4, backgroundColor: 'white' }}>
+    <Box id="testimonials" mb={2} sx={{ py: 4, backgroundColor: 'white' }}>
       <Container>
         <Box sx={{ textAlign: 'center', mb: 4 }}>
           <Typography

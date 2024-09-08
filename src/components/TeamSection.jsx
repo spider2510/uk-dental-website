@@ -24,7 +24,7 @@ const teamMembers = [
 
 export const TeamSection = () => {
     return (
-        <Box id="team" marginBottom={4} sx={{ backgroundColor: '#13192d', py: 4, paddingX: 'none' }} >
+        <Box id="team" marginBottom={4} sx={{ backgroundColor: '#FFF', py: 4, paddingX: 'none' }} >
             <Box sx={{ maxWidth: '1000px', margin: '0 auto', px: 2 }}>
                 <Box sx={{ textAlign: 'center', mb: 4 }}>
                     <Typography
@@ -34,8 +34,8 @@ export const TeamSection = () => {
                             position: 'relative',
                             display: 'inline-block',
                             mb: 2,
-                            borderBottom: '4px solid #13192d', // Adjust thickness and color as needed
-                            color: 'white'
+                            // borderBottom: '4px solid #13192d', // Adjust thickness and color as needed
+                            color:"#13192d"
                         }}
                         gutterBottom
                     >
@@ -45,7 +45,7 @@ export const TeamSection = () => {
                 <Grid container spacing={2}>
                     {teamMembers.map((member, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Box sx={{ backgroundColor: 'white', padding: 2, boxShadow: '0 4px 8px rgba(255, 255, 255, 0.2)', height: '100%' }}>
+                            <Box sx={{ backgroundColor: '#D3D3D3', padding: 2, boxShadow: '0 4px 8px rgba(255, 255, 255, 0.2)', height: '100%' }}>
                                 <Box
                                     component="img"
                                     sx={{

@@ -44,10 +44,12 @@ export const HowitWork = (props) => {
                       maxWidth: 345,
                       mx: 'auto',
                       textAlign: 'center',
-                      boxShadow: 3, // Add shadow to the card
-                      borderRadius: 0, // Remove card radius
+                      boxShadow: 0, // Remove default shadow
+                      borderRadius: 2, // Adjust the border radius
+                      border: '2px solid #d3d3d3', // Add a gray border
                       height: '100%', // Ensure all cards have the same height
-                      padding: 1
+                      padding: 1,
+                      overflow: 'hidden', // Ensure border radius is applied correctly
                     }}
                   >
                     <CardMedia

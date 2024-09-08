@@ -1,104 +1,133 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography } from '@mui/material';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
-import afterImage from '../assets/001.jpg';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Typography, Paper,Box, Container } from "@mui/material";
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-// const afterImageURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBQ77-HkHcniJPT2chQC81ANv140C32CPOfQ&s";
+// Image data array
+const imageData = [
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/01-large.jpg",
+    smallImage: "img/portfolio/01-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/02-large.jpg",
+    smallImage: "img/portfolio/02-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/03-large.jpg",
+    smallImage: "img/portfolio/03-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/04-large.jpg",
+    smallImage: "img/portfolio/04-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/05-large.jpg",
+    smallImage: "img/portfolio/05-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/06-large.jpg",
+    smallImage: "img/portfolio/06-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/07-large.jpg",
+    smallImage: "img/portfolio/07-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/08-large.jpg",
+    smallImage: "img/portfolio/08-small.jpg",
+  },
+  {
+    title: "Project Title",
+    largeImage: "img/portfolio/09-large.jpg",
+    smallImage: "img/portfolio/09-small.jpg",
+  },
+];
 
-export const Gallery = ({ data }) => {
-  const [centerSlidePercentage, setCenterSlidePercentage] = useState(33.33);
-  const [isSwipeable, setIsSwipeable] = useState(true);
-
+const Gallery = () => {
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setCenterSlidePercentage(100);
-        setIsSwipeable(false);
-      } else if (window.innerWidth < 1024) {
-        setCenterSlidePercentage(50);
-        setIsSwipeable(true);
-      } else {
-        setCenterSlidePercentage(33.33);
-        setIsSwipeable(true);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
+    AOS.init(); // Initialize AOS for animations
+    AOS.refresh();
   }, []);
 
+  // Settings for the Slick Slider
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true, // Enable auto-scrolling
+    autoplaySpeed: 3000, // Time between slides in milliseconds
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Box sx={{ backgroundColor: '#13192d', py: 4 }} id="gallery">
-      <Box sx={{ maxWidth: '1200px', margin: '0 auto', px: 2 }}>
-        <Box sx={{ textAlign: 'center', mb: 4 }}>
-          <Typography variant="h4" sx={{
-              fontWeight: 'bold',
-              position: 'relative',
-              display: 'inline-block',
-              mb: 2,
-              borderBottom: '4px solid white', // Adjust thickness and color as needed
-              color:'white'
-            }}>Gallery</Typography>
-        </Box>
-        <Carousel
-          showThumbs={false}
-          infiniteLoop
-          showStatus={false}
-          showIndicators
-          autoPlay
-          interval={3000}
-          centerMode
-          centerSlidePercentage={centerSlidePercentage}
-          swipeable={isSwipeable}
-          emulateTouch={isSwipeable}
-          sx={{ width: '50%' }}
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            hasPrev && (
-              <button type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyles, left: 0 }}>
-                ◀
-              </button>
-            )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            hasNext && (
-              <button type="button" onClick={onClickHandler} title={label} style={{ ...arrowStyles, right: 0 }}>
-                ▶
-              </button>
-            )
-          }
-        >
-          {data.map((image, index) => (
-            <Box key={index} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '15px' }}>
-              <Box sx={{ width: '100%', maxWidth: '600px', position: 'relative' }}>
-                <ReactCompareSlider
-                  itemOne={<ReactCompareSliderImage src={image.largeImage} alt="Before" />}
-                  itemTwo={<ReactCompareSliderImage src={afterImage} alt="After" />}
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </Box>
-              <Typography variant="subtitle1" sx={{ color: 'white', mt: 2, mb: 5, fontWeight: 'bold', textAlign: 'center' }}>
-                {image.title}
-              </Typography>
-            </Box>
-          ))}
-        </Carousel>
-      </Box>
+    <Box id="gallery" sx={{ textAlign: 'center', py: { xs: 2, md: 8 } }}>
+      <Container>
+      <Typography
+                        variant="h4"
+                        sx={{
+                            fontWeight: 'bold',
+                            position: 'relative',
+                            display: 'inline-block',
+                            mb: 2,
+                            // borderBottom: '4px solid #13192d', // Adjust thickness and color as needed
+                            color:"#13192d"
+                        }}
+                        gutterBottom
+                    >
+            Gallery
+          </Typography>
+        <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
+          <Slider {...settings}>
+            {imageData.map((image, index) => (
+              <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
+                <Paper elevation={0} sx={{ borderRadius: 2, overflow: 'hidden', margin: 2 }}>
+                  <img
+                    src={image.smallImage}
+                    alt={image.title}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      objectFit: 'cover',
+                      display: 'block', // Ensure the image fills the Paper container
+                    }}
+                  />
+                </Paper>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </Container>
     </Box>
   );
 };
 
-const arrowStyles = {
-  position: 'absolute',
-  top: '40%',
-  transform: 'translateY(-50%)',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  color: 'white',
-  border: 'none',
-  padding: '20px',
-  cursor: 'pointer',
-  zIndex: 2,
-};
+export default Gallery;

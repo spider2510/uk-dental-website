@@ -4,7 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import { Header } from './components/Header';
 import JsonData from "./data/data.json";
-import { Gallery } from './components/Gallery'
+import Gallery from './components/Gallery'
 import { Features } from './components/Features';
 import { About } from './components/About';
 import { HowitWork } from './components/HowitWork';

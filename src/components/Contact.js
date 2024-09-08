@@ -37,7 +37,7 @@ export const Contact = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ position: 'relative', height: '100vh', width: '100%' }}>
+    <Box id="contact" sx={{ position: 'relative', height: '100vh', width: '100%' }}>
       {!isMobile && (
         <Box
           component="img"
