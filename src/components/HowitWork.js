@@ -2,12 +2,16 @@ import React from 'react';
 import { Box, Container, Grid, Typography, Card, CardContent, CardMedia } from '@mui/material';
 import { motion } from 'framer-motion';
 import { MedicationLiquid, EditCalendar, AutoFixHigh, EmojiEmotions } from '@mui/icons-material';
-
+import { RiUserHeartLine } from "react-icons/ri"; // For consultation-related icon
+import { FaTeeth } from "react-icons/fa"; // For dental aligners
+import { MdMonitorHeart } from "react-icons/md"; // For progress monitoring
+import { GiTooth } from "react-icons/gi";
 export const HowitWork = (props) => {
   const fadeInVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
+
 
   return (
     <Box id="services" sx={{ textAlign: 'center', py: { xs: 2, md: 8 } }}>
@@ -63,10 +67,10 @@ export const HowitWork = (props) => {
                       }}
                     >
                       {/* Map MUI vector icons */}
-                      {d.name === 'Consultation' && <MedicationLiquid fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />}
-                      {d.name === 'Custom Aligners' && <AutoFixHigh sx={{ fontSize: 60, color: '#13192d' }} fontSize="large" />}
-                      {d.name === 'Wear Your Aligners' && <EditCalendar sx={{ fontSize: 60, color: '#13192d' }} fontSize="large" />}
-                      {d.name === 'Monitor Progress' && <EmojiEmotions sx={{ fontSize: 60, color: '#13192d' }} fontSize="large" />}
+                      {d.name === 'Consultation' && <RiUserHeartLine size={60} color="#13192d" />}
+                      {d.name === 'Wear Your Aligners' && <FaTeeth size={60} color="#13192d" />}
+                      {d.name === 'Custom Aligners' && <GiTooth size={60} color="#13192d"/>}
+                      {d.name === 'Monitor Progress' && <MdMonitorHeart size={60} color="#13192d" />}
                     </CardMedia>
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography

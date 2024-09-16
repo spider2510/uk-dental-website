@@ -10,48 +10,27 @@ import 'slick-carousel/slick/slick-theme.css';
 const imageData = [
   {
     title: "Project Title",
-    largeImage: "img/portfolio/01-large.jpg",
-    smallImage: "img/portfolio/01-small.jpg",
+    largeImage: "img/portfolio/041.jpeg",
   },
   {
     title: "Project Title",
-    largeImage: "img/portfolio/02-large.jpg",
-    smallImage: "img/portfolio/02-small.jpg",
+    largeImage: "img/portfolio/009.jpeg",
   },
   {
     title: "Project Title",
-    largeImage: "img/portfolio/03-large.jpg",
-    smallImage: "img/portfolio/03-small.jpg",
+    largeImage: "img/portfolio/018.jpeg",
   },
   {
     title: "Project Title",
-    largeImage: "img/portfolio/04-large.jpg",
-    smallImage: "img/portfolio/04-small.jpg",
+    largeImage: "img/portfolio/027.jpeg",
   },
   {
     title: "Project Title",
-    largeImage: "img/portfolio/05-large.jpg",
-    smallImage: "img/portfolio/05-small.jpg",
+    largeImage: "img/portfolio/044.jpeg",
   },
   {
     title: "Project Title",
-    largeImage: "img/portfolio/06-large.jpg",
-    smallImage: "img/portfolio/06-small.jpg",
-  },
-  {
-    title: "Project Title",
-    largeImage: "img/portfolio/07-large.jpg",
-    smallImage: "img/portfolio/07-small.jpg",
-  },
-  {
-    title: "Project Title",
-    largeImage: "img/portfolio/08-large.jpg",
-    smallImage: "img/portfolio/08-small.jpg",
-  },
-  {
-    title: "Project Title",
-    largeImage: "img/portfolio/09-large.jpg",
-    smallImage: "img/portfolio/09-small.jpg",
+    largeImage: "img/portfolio/047.jpeg",
   },
 ];
 
@@ -111,10 +90,10 @@ const Gallery = () => {
               <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                 <Paper elevation={0} sx={{ borderRadius: 2, overflow: 'hidden', margin: 2 }}>
                   <img
-                    src={image.smallImage}
+                    src={image.largeImage}
                     alt={image.title}
                     style={{
-                      width: '100%',
+                      width: '80%',
                       height: 'auto',
                       objectFit: 'cover',
                       display: 'block', // Ensure the image fills the Paper container

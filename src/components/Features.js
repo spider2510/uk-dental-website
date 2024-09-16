@@ -5,6 +5,10 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import BedIcon from '@mui/icons-material/Bed';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import SpeedIcon from '@mui/icons-material/Speed';
+import { VisibilityOff, Bed, AutoAwesome, Speed } from "@mui/icons-material";
+import { RiToothLine } from "react-icons/ri";
+import { FaTooth } from "react-icons/fa"; // Using react-icons for dental-specific icons
+
 
 export const Features = (props) => {
   const controls = useAnimation();
@@ -33,15 +37,15 @@ export const Features = (props) => {
   const getIcon = (title) => {
     switch (title) {
       case "Invisible Aligners":
-        return <VisibilityOffIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
+        return <RiToothLine size={60} color='#13192d' />; // Dental-related icon
       case "Personalized Care":
-        return <BedIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
+        return <Bed fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
       case "Comfortable Fit":
-        return <AutoAwesomeIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
+        return <AutoAwesome fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
       case "Quick Results":
-        return <SpeedIcon fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
+        return <Speed fontSize="large" sx={{ fontSize: 60, color: '#13192d' }} />;
       default:
-        return null;
+        return <FaTooth size={60} color='#13192d' />; // Default to tooth icon for other cases
     }
   };
 
